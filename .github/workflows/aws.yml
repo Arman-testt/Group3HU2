@@ -56,8 +56,8 @@ jobs:
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
-        aws-access-key-id: ${{ secrets.AKIAX3NVJFI7KLZNJTHQ }}
-        aws-secret-access-key: ${{ secrets.2nxYZi3ci8A2d1kXniZLIBYA/odR0dDl9sex2FzY }}
+        aws-access-key-id: ${{ secrets.AKIAX3NVJFI7GXJPNSUH }}
+        aws-secret-access-key: ${{ secrets.GwHZw2qXpXT0cDrj0Nw6Olt5Yrta/QzWk5OfRGcI }}
         aws-region: ${{ env.us-east-1 }}
 
     - name: Login to Amazon ECR
@@ -81,8 +81,8 @@ jobs:
       id: task-def
       uses: aws-actions/amazon-ecs-render-task-definition@v1
       with:
-        task-definition: ${{ env.ECS_TASK_DEFINITION }}
-        container-name: ${{ env.CONTAINER_NAME }}
+        task-definition: ${{ env.HU2_ECS_TASK_DEFINITION }}
+        container-name: ${{ env.HU3 }}
         image: ${{ steps.build-image.outputs.image }}
 
     - name: Deploy Amazon ECS task definition
